@@ -8,6 +8,11 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
     },
+    resolve: {
+        alias: {
+            images: path.resolve(__dirname, "src/img/")
+        }
+    },
     module: {
         rules: [
             {
@@ -18,6 +23,17 @@ module.exports = {
                     "sass-loader"
                 ]
             },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[ext]',
+                        }
+                    }
+                ]
+            }
         ],
     },
 
