@@ -4,6 +4,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
 </head>
 <script type="text/javascript" src="dist/main.bundle.js"></script>
 <body>
@@ -74,15 +75,26 @@
                 <div class="main-double-left-down__item learn">learn more</div>
             </div>
         </div>
-        <div class="main-double-center">
-            <div class="main-double-center-container">
-<!--                <img class="main-double-center-container__image" src="img/imgBoots.jpg" alt="">-->
-                <div class="main-double-center-container__image"></div>
+        <div class="main-double-center swiper-container">
+            <div class="main-double-center__wrapper swiper-wrapper">
+<!--                <img class="main-double-center-container__image" src="img/imgBoots.jpg" alt="<%=require('./img/imgBoots.png')%>"">-->
+                <div class="main-double-center__slide swiper-slide">
+                    <div class="main-double-center__image">
+                    <img src="<%=require('./img/imgBoots.png')%>" alt="" >
+                    </div>
+                </div>
+                <div class="main-double-center__slide swiper-slide">
+                    <div class="main-double-center__image">
+                    <img src="<%=require('./img/imgBootsAdidas.png')%>" alt="" >
+                    </div>
+                </div>
+                <div class="main-double-center__slide swiper-slide">
+                    <div class="main-double-center__image">
+                    <img src="<%=require('./img/imgBootsAsics.png')%>" alt="" >
+                    </div>
+                </div>
             </div>
-            <div class="main-double-center-slide">
-                <div class="main-double-center-slide__first">01/</div>
-                <div class="main-double-center-slide__second">04</div>
-            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
     <div class="footer">
