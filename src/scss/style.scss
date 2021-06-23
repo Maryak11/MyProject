@@ -322,9 +322,13 @@ $max-width-container: 600px;
     z-index: 0;
   }
 }
-.swiper-scrollbar {
-  background-color: darkgray;
-  margin: 0 0 70px 0;
+.swiper-pagination {
+  color: black;
+  font-family: "Montserrat Black", sans-serif;
+  margin: 0 0 110px 0;
+  @media (max-width: $max-width-container) {
+    margin: 0 0 50px 0;
+  }
 }
 
 .footer-left {

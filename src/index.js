@@ -10,10 +10,12 @@ import 'swiper/swiper-bundle.css';
 
 const swiper = new SwiperCore(".main-double-center", {
     pagination: {
-        el: '.swiper-pagination'
+        el: '.swiper-pagination',
+        type: 'fraction'
     },
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true
-    }
+
+    // scrollbar: {
+    //     el: '.swiper-scrollbar',
+    //     draggable: true
+    // }
 })
