@@ -199,12 +199,12 @@ $max-width-container: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 650px;
+  height: 800px;
   writing-mode: vertical-lr;
   right: 0;
   top: 80px;
   @media (max-width: $max-width-container) {
-    height: 560px;
+    height: 570px;
   }
 }
 
@@ -244,18 +244,19 @@ $max-width-container: 600px;
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 190px;
-  margin: 50px 0 0 0;
+  margin: 30px 0 0 0;
+  z-index: 3;
   @media (max-width: $max-width-container) {
     min-width: 310px;
-    padding: 0 0 0 20px;
-    margin: 5px 0 0 0;
-    z-index: 1;
+    margin: 5px 0 0 20px;
+
   }
 }
 
 .main-double-left-up {
   display: flex;
   justify-content: space-between;
+  z-index: 2;
 }
 
 .main-double-left-down {
@@ -269,10 +270,10 @@ $max-width-container: 600px;
   background: #FFFFFF;
   font-family: Montserrat, sans-serif;
   cursor: pointer;
+
   @media (max-width: $max-width-container) {
     font-size: 20px;
   }
-
   &:hover {
     background: black;
     color: #FFFFFF;
@@ -304,45 +305,26 @@ $max-width-container: 600px;
   }
 }
 
-//.main-double-center {
-//  display: flex;
-//  overflow: hidden;
-//  flex-wrap: wrap;
-//  flex-direction: column;
-//  justify-content: center;
-//  position: relative;
-//  z-index: 0;
-//
-//  .main-double-center__wrapper {
-//    display: flex;
-//    overflow: hidden;
-//    height: 100%;
-//    max-height: 576px;
-//    .main-double-center__slide {
-//      height: 100%;
-//      width: 100%;
-//      min-width: 437px;
-//      min-height: 350px;
-//
-//      img {
-//        margin: 0 0 0 30px;
-//        max-height: 700px;
-//        max-width: 700px;
-//      }
-//
-//    }
-//  }
-//}
-.swiper-pagination {
-  width: 20px;
-  height: 20px;
-  background: #ff9a03;
+.main-double-center {
+  max-width: 750px;
+  max-height: 750px;
+  position: relative;
+  margin: -345px 0px 0 50px;
+  z-index: 1;
+  @media (max-width: $max-width-container) {
+    margin: -140px 0 0 0;
+  }
 }
 .main-double-center__image {
   text-align: center;
   img {
     max-width: 100%;
+    z-index: 0;
   }
+}
+.swiper-scrollbar {
+  background-color: darkgray;
+  margin: 0 0 70px 0;
 }
 
 .footer-left {
@@ -354,6 +336,6 @@ $max-width-container: 600px;
 .footer-left__text {
   font-family: Montserrat, sans-serif;
   font-size: 10px;
-  margin: 50px 0 0 0;
+  //margin: 50px 0 0 0;
 
 }
