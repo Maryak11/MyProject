@@ -17,8 +17,9 @@ const swiper = new SwiperCore(".main-double-center", {
 
 
     const hamburger = document.querySelector(".hamburger");
+    const mobileMenu = document.querySelector(".main-navbar")
 
     hamburger.addEventListener("click", () => {
-       debugger
         hamburger.classList.toggle("is-active");
+        mobileMenu.classList.toggle("main-active")
     });
