@@ -4,22 +4,28 @@
 @import "ham";
 
 
-
-
-
-
 $container-color: #FFFFFF;
 $max-width-container: 620px;
+html {
+
+}
 
 body {
+  display: flex;
   position: relative;
   margin: 0 auto;
+  box-sizing: border-box;
+
 }
+
 .container {
   max-width: 1200px;
+  width: 100%;
+  overflow: hidden;
   margin: 0 auto;
+  box-sizing: border-box;
   position: relative;
-  padding: 0;
+  padding: 10px;
   background: $container-color;
 }
 
@@ -41,7 +47,7 @@ body {
   display: flex;
   justify-content: space-around;
 
-  &.hamburger{
+  &.hamburger {
     display: none;
     @media (max-width: $max-width-container) {
       display: block;
@@ -58,7 +64,6 @@ body {
       color: darkgray;
       background-size: cover;
     }
-
 
 
     &.cart {
@@ -97,17 +102,17 @@ body {
   z-index: 3;
   @media (max-width: $max-width-container) {
     display: block;
-    height: 100%;
     width: 100%;
+    height: 100%;
     position: absolute;
     text-align: center;
-    margin: -15px 0 0 0 ;
     color: #FFFFFF;
     z-index: 5;
     transform: translateX(-100%);
     background-color: #FFFFFF;
+    left: 0;
 
-    &.main-active{
+    &.main-active {
       transition: 0.5s;
       transform: translateX(0%);
     }
@@ -124,10 +129,10 @@ body {
     @media (max-width: $max-width-container) {
       padding: 13px;
     }
+
     &:hover {
       color: black;
     }
-
   }
 }
 
@@ -149,6 +154,7 @@ body {
     font-family: Rajdhani, sans-serif;
     color: darkgray;
     font-size: 20px;
+    margin: 0;
 
     &.name {
       font-size: 60px;
@@ -231,7 +237,7 @@ body {
   right: 0;
   top: 80px;
   @media (max-width: $max-width-container) {
-    height: 570px;
+    height: 540px;
   }
 }
 
@@ -261,6 +267,7 @@ body {
 
 .main-double {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0 0 0;
@@ -301,6 +308,7 @@ body {
   @media (max-width: $max-width-container) {
     font-size: 20px;
   }
+
   &:hover {
     background: black;
     color: #FFFFFF;
@@ -342,13 +350,16 @@ body {
     margin: -140px 0 0 0;
   }
 }
+
 .main-double-center__image {
   text-align: center;
+
   img {
     max-width: 100%;
     z-index: 0;
   }
 }
+
 .swiper-pagination {
   color: black;
   font-family: "Montserrat Black", sans-serif;
@@ -358,6 +369,70 @@ body {
   }
 }
 
+.section__products {
+  margin: 30px 0 0 0;
+}
+.products__title {
+  font-family: "Montserrat Black", sans-serif;
+  letter-spacing: 4px;
+}
+.products__items {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+.product__item {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto 1fr minmax(50px, auto)/ 1fr;
+}
+.products_image {
+  max-width: 450px;
+  max-height: 450px;
+  margin: 0 5px 0 0;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.products__name_title {
+  text-decoration: none;
+  color: black;
+  font-family: Montserrat, sans-serif;
+  line-height: 30px;
+}
+.products__name {
+  text-decoration: none;
+  color: black;
+  font-family: "Montserrat Black", sans-serif;
+  line-height: 30px;
+}
+
+.products__button {
+  color: darkgray;
+  max-height: 40px;
+  font-family: Montserrat, sans-serif;
+  border-radius: 10px;
+  justify-self: start;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 40px;
+  border: 2px solid darkgray;
+  padding: 0 20px;
+  transition: .5s;
+  &:hover{
+    background-color: black;
+    color: #FFFFFF;
+    border: 2px solid black;
+    //box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3A2F28;
+  }
+}
+
+.footer {
+  margin: 20px 0 0 0;
+}
 .footer-left {
   display: flex;
   flex-direction: row;
@@ -367,6 +442,5 @@ body {
 .footer-left__text {
   font-family: Montserrat, sans-serif;
   font-size: 10px;
-  //margin: 50px 0 0 0;
 
 }

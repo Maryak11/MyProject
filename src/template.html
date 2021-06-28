@@ -4,13 +4,14 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
 </head>
 
 <body>
 
 <div class="container">
-    <div class="header">
+    <header class="header">
         <div class="header-logo">zainoo</div>
         <div class="header-menu">
             <button class=" header-menu hamburger hamburger--spring" type="button">
@@ -24,35 +25,35 @@
             </span>
             <span class="header-menu__item material-icons">perm_identity</span>
         </div>
-    </div>
-    <div class="main">
-        <div class="main-navbar">
+    </header>
+    <main class="main">
+        <nav class="main-navbar">
             <div class="main-navbar__item">Shoes</div>
             <div class="main-navbar__item">Bags</div>
             <div class="main-navbar__item">Accessories</div>
             <div class="main-navbar__item">Support</div>
-        </div>
-        <div class="main-center">
-                <div class="main-center__item-text heading">The best looks; Top comfort</div>
-                <div class="main-center__item-text name">Comfy Maxer</div>
-                <div class="main-center__item-text paragraph">
-                    Our shoes fuse together an insole that cushions every move,
-                    laces that you’ll never need to tie again,
-                    and an odor-fighting copper thread lining.
+        </nav>
+        <section class="main-center">
+            <h1 class="main-center__item-text heading">The best looks; Top comfort</h1>
+            <h2 class="main-center__item-text name">Comfy Maxer</h2>
+            <h1 class="main-center__item-text paragraph">
+                Our shoes fuse together an insole that cushions every move,
+                laces that you’ll never need to tie again,
+                and an odor-fighting copper thread lining.
+            </h1>
+            <div class="main-center-buttons-container">
+                <div class="main-center-buttons-container__item">
+                    <span class="main-double-center-slide__first material-icons add-cart">add_shopping_cart</span>
+                    <div class="main-center-buttons-container__item-text">Add To Cart</div>
                 </div>
-                <div class="main-center-buttons-container">
-                    <div class="main-center-buttons-container__item">
-                        <span class="main-double-center-slide__first material-icons add-cart">add_shopping_cart</span>
-                        <div class="main-center-buttons-container__item-text">Add To Cart</div>
-                    </div>
-                    <div class="main-center-buttons-container__item">
-                        <span class="main-double-center-slide__first material-icons play">play_circle</span>
-                        <div class="main-center-buttons-container__item-text">Watch Intro</div>
-                    </div>
+                <div class="main-center-buttons-container__item">
+                    <span class="main-double-center-slide__first material-icons play">play_circle</span>
+                    <div class="main-center-buttons-container__item-text">Watch Intro</div>
                 </div>
-        </div>
-        <div class="main-number">94</div>
-        <div class="main-right-navbar">
+            </div>
+        </section>
+        <section class="main-number">94</section>
+        <nav class="main-right-navbar">
 
             <ul class="main-right-navbar__item">
                 <li>team</li>
@@ -66,10 +67,11 @@
                 <li>in</li>
             </ul>
 
-        </div>
-    </div>
-    <div class="main-double">
-        <div class="main-double-left">
+        </nav>
+    </main>
+    <div class="new-sting"></div>
+    <main class="main-double">
+        <section class="main-double-left">
             <div class="main-double-left-up">
                 <div class="main-double-left-up__care">Extra Care</div>
                 <div class="main-double-left-up__tech">Foot Tech</div>
@@ -78,36 +80,110 @@
                 <div class="main-double-left-down__item line">_____</div>
                 <div class="main-double-left-down__item learn">learn more</div>
             </div>
-        </div>
-        <div class="main-double-center swiper-container">
+        </section>
+        <section class="main-double-center swiper-container">
             <div class="main-double-center__wrapper swiper-wrapper">
-<!--                <img class="main-double-center-container__image" src="img/imgBoots.jpg" alt="<%=require('./img/imgBoots.png')%>"">-->
+                <!--                <img class="main-double-center-container__image" src="img/imgBoots.jpg" alt="<%=require('./img/imgBoots.png')%>"">-->
                 <div class="main-double-center__slide swiper-slide">
                     <div class="main-double-center__image">
-                    <img src="<%=require('./img/imgBoots.png')%>" alt="" >
+                        <img src="<%=require('./img/imgBoots.png')%>" alt="">
                     </div>
                 </div>
                 <div class="main-double-center__slide swiper-slide">
                     <div class="main-double-center__image">
-                    <img src="<%=require('./img/imgBootsAdidas.png')%>" alt="" >
+                        <img src="<%=require('./img/imgBootsAdidas.png')%>" alt="">
                     </div>
                 </div>
-                <div class="main-double-center__slide swiper-slide" >
+                <div class="main-double-center__slide swiper-slide">
                     <div class="main-double-center__image">
-                    <img src="<%=require('./img/imgBootsAsics.png')%>" alt="" >
+                        <img src="<%=require('./img/imgBootsAsics.png')%>" alt="">
                     </div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
+        </section>
+    </main>
+    <section class="section__products">
+        <section class="products__container products">
+            <h2 class="products__title">Товары</h2>
+            <hr>
+            <div class="products__items">
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBoots.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button"> Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBootsAsics.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button"> Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBootsAdidas.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button"> Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBoots.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button"> Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBootsAdidas.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button"> Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBoots.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button">
+                        Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBootsAdidas.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button">
+                        Add to Cart</a>
+                </div>
+                <div class="product__item">
+                    <a href="" class="products_image">
+                        <img src="<%=require('./img/imgBootsAsics.png')%>" alt="">
+                    </a>
+                    <a href="" class="products__name_title">Мужская обувь</a>
+                    <a href="" class="products__name">Nike Air Max 95</a>
+                    <a href="" class="products__button">
+                        Add to Cart</a>
+                </div>
 
-        </div>
-
-    </div>
-    <div class="footer">
+            </div>
+        </section>
+    </section>
+    <footer class="footer">
         <div class="footer-left">
             <div class="footer-left__text">Scroll Down</div>
         </div>
-    </div>
+    </footer>
 </div>
 
 </body>
