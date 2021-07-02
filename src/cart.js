@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+
     const productBtn = document.querySelectorAll(".products__button")
     const cartProductList = document.querySelector('.cart-content__list')
     const cart = document.querySelector('.cart-content')
@@ -6,11 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullPrice = document.querySelector('.fullprice')
 
 
-    let price = 0;
+    let price = 0
+    let randomID = 0
 
-    const randomID = () => {
-        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-    }
+    // const randomID = () => {
+    //     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+    // }
 
     const priceWithoutSpaces = (str) => {
         return str.replace(/\s/g, '')
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const printCount = () => {
-        let length = cartProductList.querySelector('.simplebar-content').children.length
+        let length = cartProductList.children.length
         cartCount.textContent = length
         length > 0
             ? cart.classList.add('active') : cart.classList.remove('active')
@@ -51,20 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const minusPrice = (currentPrice) => {
         return price -= currentPrice
     }
-    // const initialState = () => {
-    //     if (localStorage.getItem('products') !== null) {
-    //         console.log(localStorage.getItem('products'))
-    //         // cartProductList.querySelector('.simplebar-content').innerHTML = localStorage.getItem('products')
-    //     }
-    //     printCount()
-    // }
+
     const upDateStorage = () => {
-        let parent = cartProductList.querySelector('.simplebar-content')
+        let parent = cartProductList
         let html = parent.innerHTML
         html.trim().length
             ? localStorage.setItem('products', html)
             : localStorage.removeItem('products')
     }
+
+    const sumCount = () => {
+        document.querySelectorAll('.cart-content__item').forEach( el => {
+            price += parseInt(priceWithoutSpaces(el.querySelector('.cart-product__price').textContent))
+        })
+    }
+    const initialState = () => {
+        if (localStorage.getItem('products') !== null) {
+            cartProductList.innerHTML = localStorage.getItem('products')
+            printCount()
+            sumCount()
+            // cartProductList.querySelector('.simplebar-content').innerHTML = localStorage.getItem('products')
+        }
+        // printCount()
+    }
+    initialState()
 
     const deleteProduct = (productParent) => {
         let id = productParent.querySelector('.cart-product').dataset.id
@@ -76,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         upDateStorage()
     }
     productBtn.forEach(el => {
-        el.closest(".product__item").setAttribute('data-id', randomID())
+        el.closest(".product__item").setAttribute('data-id', ++randomID)
         el.addEventListener('click', (e) => {
             let self = e.currentTarget
             let parent = self.closest('.product__item')
@@ -87,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let priceCountNumber = parseInt(priceWithoutSpaces(priceCountString))
             plusPrice(priceCountNumber)
             printFullPrice()
-            cartProductList.querySelector('.simplebar-content')
-                .insertAdjacentHTML('afterbegin',
+            cartProductList.insertAdjacentHTML('afterbegin',
                     generateCartProduct(img, title, priceCountNumber, id))
             printCount()
+            upDateStorage()
         })
     })
 
@@ -99,5 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
             deleteProduct(e.target.closest('.cart-content__item'))
         }
     })
-})
 

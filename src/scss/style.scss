@@ -123,6 +123,7 @@ body {
 
 .cart-content__list {
   max-height: 330px;
+  overflow: auto;
 }
 .cart-product {
   display: flex;
