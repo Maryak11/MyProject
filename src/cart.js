@@ -71,6 +71,7 @@
             cartProductList.innerHTML = localStorage.getItem('products')
             printCount()
             sumCount()
+            printFullPrice()
             // cartProductList.querySelector('.simplebar-content').innerHTML = localStorage.getItem('products')
         }
         // printCount()

@@ -3,8 +3,12 @@ import 'simplebar';
 import 'simplebar/dist/simplebar.css';
 import SwiperCore, {Autoplay, Navigation, Pagination, Scrollbar} from 'swiper/core';
 import 'swiper/swiper-bundle.css';
-import './cart'
+import './Products/ProductsPage'
+import './Products/Products'
+import './Products/Catalog'
+import './Util/LocalStorageUtil'
 import Menu from "./menu";
+import {Products} from "./Products/Products";
 
     SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay]);
 
@@ -20,3 +24,5 @@ import Menu from "./menu";
     })
     const burger = new Menu(".hamburger", ".main-navbar")
     burger.initMenu()
+
+
