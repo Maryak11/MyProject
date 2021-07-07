@@ -7,7 +7,9 @@ import './Products/ProductsPage'
 import './Products/Products'
 import './Products/Catalog'
 import './Util/LocalStorageUtil'
+import './HeaderCount'
 import Menu from "./menu";
+import './ShoppingCart'
 import {Products} from "./Products/Products";
 
     SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay]);
