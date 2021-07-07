@@ -1,9 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
+const path = require("path");
 
+// Инициализация WebPack плагинов
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
     entry: {
-        app: './src/index.js',
+        app: "./src/index.js",
     },
 
     // plugins: [
@@ -13,19 +15,15 @@ module.exports = {
     // ],
 
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, "dist"),
         clean: true,
     },
     module: {
         rules: [
             {
                 test: /\.(css|scss|sass)$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader"
-                ]
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
             // {
             //     test: /\.(png|jpg|gif)$/,
@@ -40,15 +38,24 @@ module.exports = {
             // },
             {
                 test: /\.(?:ico|gif|png|jpg|svg|jpeg)$/i,
-                type: 'asset/resource',
-            }
+                type: "asset/resource",
+            },
+
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+                options: {
+                    // eslint options (if necessary)
+                },
+            },
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'webpack Boilerplate',
-            template: path.resolve(__dirname, './src/template.html'), // шаблон
-            filename: 'index.html', // название выходного файла
+            title: "webpack Boilerplate",
+            template: path.resolve(__dirname, "./src/template.html"), // шаблон
+            filename: "index.html", // название выходного файла
         }),
-    ]
+    ],
 };
