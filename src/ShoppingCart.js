@@ -22,8 +22,12 @@ class ShoppingCart {
     this.render()
   }
   onClickInMobileVersion() {
-    this.cartContent.classList.toggle("active")
-    console.log('dfgdfg')
+    if (localStorageUtil.getAllItems().length !== 0) {
+      this.cartContent.classList.toggle("active")
+      console.log('dfgdfg')
+    } else {
+      this.cartContent.classList.remove("active")
+    }
   }
 
   render() {
