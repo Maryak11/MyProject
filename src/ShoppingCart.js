@@ -21,6 +21,7 @@ class ShoppingCart {
     headerCount.render()
     this.render()
   }
+
   onClickInMobileVersion() {
     if (localStorageUtil.getAllItems().length !== 0) {
       this.cartContent.classList.toggle("active")
@@ -62,7 +63,7 @@ class ShoppingCart {
         })
         this.price.textContent = localStorageUtil.sumFullPriceLS()
         console.log(window.screen.width)
-        if (window.screen.width <= 640){
+        if (window.screen.width <= 640) {
           this.cart.addEventListener("click", el => {
             this.onClickInMobileVersion()
           })
