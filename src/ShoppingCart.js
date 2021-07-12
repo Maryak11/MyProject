@@ -64,9 +64,13 @@ class ShoppingCart {
         this.price.textContent = localStorageUtil.sumFullPriceLS()
         console.log(window.screen.width)
         if (window.screen.width <= 640) {
+          this.cartContent.addEventListener('click', el => {
+            el.stopPropagation()
+          })
           this.cart.addEventListener("click", el => {
             this.onClickInMobileVersion()
           })
+
         }
         CART_CONTENT.appendChild(liShoppingCart)
       })
