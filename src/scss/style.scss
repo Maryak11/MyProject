@@ -116,9 +116,18 @@ body {
   background-color: #FFFFFF;
   box-shadow: 0 4px 4px rgba(135, 135, 135, 0.25);
   display: none;
-
 }
-
+@media (max-width: $max-width-container) {
+  .cart-content {
+    &.active {
+      width: 355px;
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+  }
+}
 .cart:hover .cart-content {
   &.active {
     display: block;
@@ -127,6 +136,8 @@ body {
     transition: opacity 0.3s, visibility 0.3s;
   }
 }
+
+
 
 .cart-content__list {
   max-height: 330px;
@@ -182,10 +193,14 @@ body {
 .cart-product__title {
   font-weight: 400;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 20px;
   font-family: Montserrat, sans-serif;
   color: darkgray;
+  @media (max-width: $max-width-container){
+    font-size: 11px;
+    line-height: 12px;
+  }
 }
 
 .cart-product__price {
@@ -194,6 +209,10 @@ body {
   font-size: 20px;
   line-height: 23px;
   color: darkgray;
+  @media (max-width: $max-width-container){
+    font-size: 14px;
+  }
+
 }
 
 .cart-content__bottom {

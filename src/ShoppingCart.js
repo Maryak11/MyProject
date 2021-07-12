@@ -22,7 +22,6 @@ class ShoppingCart {
     this.render()
   }
   onClickInMobileVersion() {
-    this.cart.classList.remove('cart:hover')
     this.cartContent.classList.toggle("active")
     console.log('dfgdfg')
   }
@@ -64,9 +63,6 @@ class ShoppingCart {
             this.onClickInMobileVersion()
           })
         }
-        // this.cartContent.addEventListener("click", (el) => {
-        //
-        // })
         CART_CONTENT.appendChild(liShoppingCart)
       })
 
