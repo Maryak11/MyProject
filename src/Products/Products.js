@@ -6,9 +6,7 @@ import { headerCount } from "../HeaderCount";
 import { shoppingCart } from "../ShoppingCart";
 
 export class Products {
-  constructor() {
-    this.productsBtn = document.querySelector('.products__items')
-  }
+
 
   onclickProductBtn(id, name, price, img) {
     let prodItemLS = {
@@ -16,11 +14,12 @@ export class Products {
       name,
       price,
       img,
+      priceCount: +price.replaceAll(' ',''),
       count: 1
     }
     localStorageUtil.putProducts(prodItemLS)
     headerCount.render()
-
+    shoppingCart.render()
   }
 
   render() {
