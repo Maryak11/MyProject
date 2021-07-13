@@ -600,6 +600,10 @@ body {
     border: 2px solid black;
     box-shadow: 0 0 0 2px white, 0 0 0 4px #3A2F28;
   }
+
+  &.active {
+    background-color: green;
+  }
 }
 
 .footer {
