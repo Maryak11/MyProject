@@ -2,7 +2,7 @@ import { localStorageUtil } from "./Util/LocalStorageUtil";
 
 class HeaderCount {
   render() {
-    const productArrayCount = localStorageUtil.getAllItems();
+    const productArrayCount = localStorageUtil.getProducts();
     console.log(productArrayCount);
     const newArr = productArrayCount.reduce((acc, el) => {
       return acc + +el.count;
@@ -19,4 +19,4 @@ class HeaderCount {
 }
 
 export const headerCount = new HeaderCount();
-headerCount.render()
+headerCount.render();

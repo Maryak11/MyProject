@@ -25,17 +25,16 @@ class ShoppingCart {
   onClickInMobileVersion() {
     if (localStorageUtil.getAllItems().length !== 0) {
       this.cartContent.classList.toggle("active");
-      console.log("dfgdfg");
     } else {
       this.cartContent.classList.remove("active");
     }
   }
 
   render() {
-    const allItemsLS = localStorageUtil.getAllItems();
+    const allItemsLS = localStorageUtil.getProducts();
     let htmlShoppingCart = "";
     CART_CONTENT.innerHTML = "";
-    if (localStorageUtil.getAllItems().length !== 0) {
+    if (localStorageUtil.getProducts().length !== 0) {
       this.cartContent.classList.add("active");
       allItemsLS.forEach(({ id, name, price, img, count }) => {
         const liShoppingCart = document.createElement("li");
@@ -49,7 +48,6 @@ class ShoppingCart {
                       <input class="cart-product__input" type="number" value="${count}" min="0">
                       <div class="delete material-icons">delete</div>
               </article>           
-                 
                 `;
         liShoppingCart.classList.add("cart-content__item");
         const btnDelete = liShoppingCart.querySelector(".delete");
@@ -67,11 +65,6 @@ class ShoppingCart {
           );
         });
         this.price.textContent = localStorageUtil.sumFullPriceLS();
-        console.log(window.screen.width);
-        // this.cartContent.addEventListener( 'click' , el => {
-        //   el.stopPropagation()
-        // })
-
         this.cart.addEventListener("click", (el) => {
           if (
             window.screen.width <= 640 &&
@@ -89,5 +82,5 @@ class ShoppingCart {
   }
 }
 
-export const shoppingCart = new ShoppingCart()
-shoppingCart.render()
+export const shoppingCart = new ShoppingCart();
+shoppingCart.render();
